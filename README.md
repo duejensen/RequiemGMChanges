@@ -1,5 +1,6 @@
 # GMChanges
 
+
 Version 0.6
 =========================
 Added ScrollofTownPortal
