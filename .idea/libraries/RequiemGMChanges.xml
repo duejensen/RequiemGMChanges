@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="RequiemGMChanges">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/server.jar!/" />
+      <root url="jar://$PROJECT_DIR$/javassist.jar!/" />
+      <root url="jar://$PROJECT_DIR$/common.jar!/" />
+      <root url="jar://$PROJECT_DIR$/patcher.jar!/" />
+      <root url="jar://$PROJECT_DIR$/modlauncher.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
