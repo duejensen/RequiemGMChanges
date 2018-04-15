@@ -1,8 +1,4 @@
-# Draconus Arcanum Server Module
-
-http://draconusarcanum.enjin.com/
-
-
+# GMChanges
 
 Version 0.6
 =========================
