@@ -1,6 +1,15 @@
 # GMChanges
 
 
+Version 0.7
+=========================
+Added BetterGamemasters
+Added MoonMetalMining
+Added more logging into MoonMetalMining class
+Separated items into RequiemItemsOld
+Added trader reset command
+
+
 Version 0.6
 =========================
 Added ScrollofTownPortal
@@ -24,10 +33,9 @@ Added commands
 #sendhome <player>
 #moveplayer <player>
 
-fillup will fill players hunger, stamina and ccfp to max
-sendhome teleports player to his/her token
-moveplayer teleports player to your position
-
+fillup- will fill players hunger, stamina and ccfp to max
+sendhome- teleports player to his/her token
+moveplayer- teleports player to your position
 
 
 Version 0.2 - 2018March24

@@ -20,7 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class AllInOne implements WurmServerMod, Configurable, PreInitable, Initable, ServerStartedListener, BehaviourProvider, PlayerMessageListener {
-    private static final Logger _logger = Logger.getLogger(AllInOne.class.getName() + " v1.8");
+    private static final Logger _logger = Logger.getLogger(AllInOne.class.getName() + " v0.7");
     public static int commandPowerLevel = 3;
     public static boolean addGmProtect = true;
     public static boolean gmFullFavor = true;

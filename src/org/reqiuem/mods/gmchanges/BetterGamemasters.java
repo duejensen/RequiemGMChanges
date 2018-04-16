@@ -15,11 +15,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Implements several things that are meant to make a Gamemaster's life a bit
+ * Implements several things that are meant to make a GameMaster's life a bit
  * easier, by providing utility and convenience.
  */
 public class BetterGamemasters {
-    private static final Logger _logger = Logger.getLogger(BetterGamemasters.class.getName() + " v1.2");
+    private static final Logger _logger = Logger.getLogger(BetterGamemasters.class.getName());
 
 
     protected static void SpawnTowerGuards() {
