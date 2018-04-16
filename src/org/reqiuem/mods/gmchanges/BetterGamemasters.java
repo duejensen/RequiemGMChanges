@@ -41,6 +41,9 @@ public class BetterGamemasters {
         }
     }
 
+    /**
+     * Does not currently work
+     */
     protected static void NoDropItemLimit() {
         _logger.info("Applying patch for no drop item limit.");
         
@@ -122,6 +125,8 @@ public class BetterGamemasters {
     }
     
     /**
+     * ========== DOES NOT WORK CURRENTLY =========
+     *
      * Effectively makes any item that is owned by a players with the set
      * MGMT power take no damage at all. That includes tools through use,
      * weapons, even fences or house wall. Everything that is a DbItem taking
@@ -140,27 +145,7 @@ public class BetterGamemasters {
             };
             CtMethod method = ctClass.getMethod("setDamage",
                     Descriptor.ofMethod(CtPrimitiveType.booleanType, parameters));
-            
-            /*
-            * Inserts the following pseudo-code at the head of the method:
-            
-                if (item owner's MGMT power >= minimum power for feature)
-                    return false; // apply no damage, false means item not destroyed.
-            
-            * Actual code is:
-                try {
-                    long ownerID = this.getOwnerId();
-            
-                    if (ownerID != -10L && Server.getInstance().getCreature(ownerID).getPower() >= minPower)
-                        return false;
-                } catch (NoSuchCreatureException nsc) {
-                    DbItem.logger.log(Level.WARNING, nsc.getMessage(), (Throwable)nsc);
-                } catch (NoSuchPlayerException nsp) {
-                    if (PlayerInfoFactory.getPlayerInfoWithWurmId(this.getOwnerId()) == null)
-                        DbItem.logger.log(Level.WARNING, nsp.getMessage(), (Throwable)nsp);
-                }
-            */
-            
+
             // Needs fully qualified names or fails compiling.
             method.insertBefore(
                     "{"

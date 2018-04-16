@@ -43,13 +43,10 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
     private boolean useMoonMetalMiningMod = false;
     public boolean changeVeinCap = false;
     private boolean changeHomeVeinCap = false;
-    //public static int newVeinCap = 10000;
-    //public static int newHomeVeinCap = 100;
     public boolean randomMoonMetalDrops = false;
     static int staticRandomGlimmersteelChance = 3000;
     static int staticRandomAdamantiteChance = 3000;
     static int staticRandomSeryllChance = 3000;
-    //private String actionMethodDesc = "(Lcom/wurmonline/server/behaviours/Action;Lcom/wurmonline/server/creatures/Creature;Lcom/wurmonline/server/items/Item;IIZIISF)Z";
     public static String actionMethodDesc = "(Lcom/wurmonline/server/behaviours/Action;Lcom/wurmonline/server/creatures/Creature;Lcom/wurmonline/server/items/Item;IIZIIISF)Z";
     public static String createGemMethodDesc = "(IIIILcom/wurmonline/server/creatures/Creature;DZLcom/wurmonline/server/behaviours/Action;)Lcom/wurmonline/server/items/Item;";
 

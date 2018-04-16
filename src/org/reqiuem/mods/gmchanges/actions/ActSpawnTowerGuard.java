@@ -27,7 +27,7 @@ public class ActSpawnTowerGuard implements ModAction, ActionPerformer, Behaviour
     
     public ActSpawnTowerGuard() {
         _actionID = (short)ModActions.getNextActionId();
-        _actionEntry = ActionEntry.createEntry(_actionID, "Spawn guard", "spawning guard", new int[] { });
+        _actionEntry = ActionEntry.createEntry(_actionID, "GM Spawn guard", "spawning guard", new int[] { });
         ModActions.registerAction(_actionEntry);
     }
     
