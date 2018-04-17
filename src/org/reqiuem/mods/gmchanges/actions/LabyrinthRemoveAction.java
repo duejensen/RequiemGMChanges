@@ -5,6 +5,7 @@
 package org.reqiuem.mods.gmchanges.actions;
 
 import com.wurmonline.server.behaviours.Action;
+
 import com.wurmonline.server.behaviours.ActionEntry;
 import com.wurmonline.server.creatures.Creature;
 import com.wurmonline.server.items.Item;
@@ -12,6 +13,7 @@ import org.gotti.wurmunlimited.modsupport.actions.ActionPerformer;
 import org.gotti.wurmunlimited.modsupport.actions.BehaviourProvider;
 import org.gotti.wurmunlimited.modsupport.actions.ModAction;
 import org.gotti.wurmunlimited.modsupport.actions.ModActions;
+import com.wurmonline.shared.constants.StructureConstantsEnum;
 import org.reqiuem.mods.gmchanges.maze.Maze;
 
 import java.util.Arrays;
@@ -80,7 +82,7 @@ public class LabyrinthRemoveAction implements ModAction
                     return true;
                 }
                 performer.getCommunicator().sendNormalServerMessage("Remove Labyrinth!");
-                final Maze m = new Maze(tilex, tiley, 60, (byte)126);
+                final Maze m = new Maze(tilex, tiley, 60, StructureConstantsEnum.FENCE_MAGIC_STONE);
                 m.clear();
                 return true;
             }
