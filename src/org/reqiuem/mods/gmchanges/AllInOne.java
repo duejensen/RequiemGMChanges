@@ -4,7 +4,15 @@ import com.wurmonline.server.Servers;
 import com.wurmonline.server.creatures.Communicator;
 import com.wurmonline.server.items.ItemList;
 import com.wurmonline.server.players.Player;
+
+import javassist.CannotCompileException;
 import javassist.ClassPool;
+import javassist.CtClass;
+import javassist.CtConstructor;
+import javassist.NotFoundException;
+import javassist.expr.ExprEditor;
+import javassist.expr.MethodCall;
+
 import org.gotti.wurmunlimited.modloader.classhooks.HookManager;
 import org.gotti.wurmunlimited.modloader.interfaces.*;
 import org.gotti.wurmunlimited.modsupport.actions.BehaviourProvider;
@@ -75,8 +83,34 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
                 MoonMetalMining.changeHomeServerVeinCap();
             }
         }
+        // TODO  need to be configurable
+        fixFatigueActions();
+     
         }
-
+    
+    static void fixFatigueActions()  {
+    	try {
+    		// - Remove fatiguing actions requiring you to be on the ground - //
+    		ClassPool classPool = HookManager.getInstance().getClassPool();
+    		CtClass ctAction = classPool.get("com.wurmonline.server.behaviours.Action");
+    		CtConstructor[] ctActionConstructors = ctAction.getConstructors();
+    		for(CtConstructor constructor : ctActionConstructors){
+    			constructor.instrument(new ExprEditor(){
+    				public void edit(MethodCall m) throws CannotCompileException {
+    					if (m.getMethodName().equals("isFatigue")) {
+    						m.replace("$_ = false;");
+    						return;
+    					}
+    				}
+    			});
+    		}
+    	} catch ( NotFoundException |  CannotCompileException e )   {
+    		 _logger.log(Level.SEVERE, "Can't apply patch for isFatigue.", e);
+        	
+        }       
+    }
+    
+    
     @Override
     public void init() {
 
