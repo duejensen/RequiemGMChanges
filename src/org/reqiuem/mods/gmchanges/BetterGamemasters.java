@@ -169,7 +169,7 @@ public class BetterGamemasters {
     }
     
     /**
-     * Effectively makes Gamemasters of MGMT powers 2 and higher require no
+     * Effectively makes GameMasters of MGMT powers 2 and higher require no
      * skill or material building floors below, above, floors with opening,
      * staircases on floors below, and roofs.
      * 

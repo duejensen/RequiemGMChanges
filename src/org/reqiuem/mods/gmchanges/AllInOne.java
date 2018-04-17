@@ -1,5 +1,6 @@
 package org.reqiuem.mods.gmchanges;
 
+import com.wurmonline.server.Servers;
 import com.wurmonline.server.creatures.Communicator;
 import com.wurmonline.server.items.ItemList;
 import com.wurmonline.server.players.Player;
@@ -7,9 +8,11 @@ import javassist.ClassPool;
 import org.gotti.wurmunlimited.modloader.classhooks.HookManager;
 import org.gotti.wurmunlimited.modloader.interfaces.*;
 import org.gotti.wurmunlimited.modsupport.actions.BehaviourProvider;
+import org.gotti.wurmunlimited.modsupport.actions.ModAction;
 import org.gotti.wurmunlimited.modsupport.actions.ModActions;
 import org.reqiuem.mods.gmchanges.actions.ActGmProtect;
 import org.reqiuem.mods.gmchanges.actions.ActSpawnTowerGuard;
+import org.reqiuem.mods.gmchanges.actions.LabyrinthAction;
 import org.reqiuem.mods.gmchanges.cmds.*;
 import org.reqiuem.mods.gmchanges.contrib.ArgumentTokenizer;
 import org.reqiuem.mods.gmchanges.utils.CmdTool;
@@ -21,7 +24,7 @@ import java.util.logging.Logger;
 
 public class AllInOne implements WurmServerMod, Configurable, PreInitable, Initable, ServerStartedListener, BehaviourProvider, PlayerMessageListener {
     private static final Logger _logger = Logger.getLogger(AllInOne.class.getName() + " v0.7");
-    public static int commandPowerLevel = 3;
+    public static int commandPowerLevel = 5;
     public static boolean addGmProtect = true;
     public static boolean gmFullFavor = true;
     public static boolean gmFullStamina = true;
@@ -55,7 +58,7 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
         _logger.log(Level.INFO,"preInit()");
         ModActions.init();
         BetterGamemasters.SpawnTowerGuards();
-        ModActions.init();
+        //ModActions.init();
         if (_noCarryWeightLimit) BetterGamemasters.NoCarryWeightLimit();
         if (_notSlowedByWeight) BetterGamemasters.NotSlowedByWeight();
         if (_noDamageOnGamemasterOwnedItems) BetterGamemasters.NoDamageOnGamemasterOwnedItems();
@@ -81,7 +84,7 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
 
         HookManager hooks = HookManager.getInstance();
 
-        ClassPool pool = hooks.getClassPool();
+        hooks.getClassPool();
 
         try {
 
@@ -89,25 +92,19 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
                 hooks.registerHook("com.wurmonline.server.creatures.ai.ChatManager",
                                    "answerLocalChat",
                                    "(Lcom/wurmonline/server/Message;Ljava/lang/String;)V",
-                                    () -> (proxy, method, args) -> {
-                    return null;
-                });
+                                    () -> (proxy, method, args) -> null);
 
                 hooks.registerHook("com.wurmonline.server.creatures.ai.ChatManager",
                                    "getSayToCreature",
                                    "(Lcom/wurmonline/server/creatures/Creature;)Ljava/lang/String;",
-                                    () -> (proxy, method, args) -> {
-                    return null;
-                });
+                                    () -> (proxy, method, args) -> null);
             }
 
             if ( hidePlayerGodInscriptions ) {
                 hooks.registerHook("com.wurmonline.server.deities.Deities",
                                    "getRandomNonHateDeity",
                                    "()Lcom/wurmonline/server/deities/Deity;",
-                                   () -> (proxy, method, args) -> {
-                    return null;
-                });
+                                   () -> (proxy, method, args) -> null);
             }
 
             if ( gmFullFavor ) {
@@ -181,7 +178,7 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
             Log("No carry weight limit: ", _noCarryWeightLimit, _noCarryWeightLimitPower);
             Log("Not slowed by inventory weight: ", _notSlowedByWeight, _notSlowedByWeightPower);
             Log("No damage on GM owned items: ", _noDamageOnGamemasterOwnedItems, _noDamageOnGamemasterOwnedItemsPower);
-            Log("No Floor building requirements: ", _noFloorBuildingRequirements, 2);
+            Log("No Floor building requirements: ", _noFloorBuildingRequirements, commandPowerLevel);
             Log("No item limit: ", _noItemLimit, _noItemLimitPower);
             useMoonMetalMiningMod = Boolean.valueOf(props.getProperty("useMoonMetalMiningMod", Boolean.toString(useMoonMetalMiningMod)));
             changeVeinCap = Boolean.valueOf(props.getProperty("changeVeinCap", Boolean.toString(changeVeinCap)));
@@ -233,6 +230,8 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
         try {
 
             if (addGmProtect) ModActions.registerAction(new ActGmProtect());
+            ModActions.registerAction(new LabyrinthAction());
+
             ModActions.registerAction(new ActSpawnTowerGuard());
 
             /* allow gifting coins as mission rewards */
@@ -280,6 +279,10 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
         } catch (Throwable e) {
             _logger.log(Level.SEVERE, "Error in onServerStarted()", e);
         }
+    }
+
+    public static boolean isTestEnv() {
+        return Servers.localServer.getName().equals("Jubaroo");
     }
 
 }
