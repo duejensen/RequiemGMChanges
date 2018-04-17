@@ -5,6 +5,7 @@
 package org.reqiuem.mods.gmchanges.actions;
 
 import com.wurmonline.server.behaviours.Action;
+import com.wurmonline.shared.constants.StructureConstantsEnum;
 import com.wurmonline.server.behaviours.ActionEntry;
 import com.wurmonline.server.behaviours.Actions;
 import com.wurmonline.server.creatures.Creature;
@@ -136,7 +137,7 @@ public class LabyrinthAction implements ModAction
                 }
                 Cooldowns.setUsed(playerEffect);
                 performer.getCommunicator().sendNormalServerMessage("Labyrinth!");
-                final Maze m = new Maze(tilex, tiley, 21, (byte)113);
+                final Maze m = new Maze(tilex, tiley, 21, StructureConstantsEnum.HEDGE_FLOWER3_HIGH);
                 m.create(true, false);
                 return true;
             }

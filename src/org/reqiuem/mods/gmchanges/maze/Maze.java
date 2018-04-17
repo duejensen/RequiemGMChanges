@@ -5,6 +5,7 @@
 package org.reqiuem.mods.gmchanges.maze;
 
 import com.wurmonline.mesh.Tiles;
+import com.wurmonline.shared.constants.StructureConstantsEnum;
 import com.wurmonline.server.Server;
 import com.wurmonline.server.behaviours.MethodsStructure;
 import com.wurmonline.server.behaviours.Terraforming;
@@ -33,7 +34,7 @@ public class Maze
     private boolean[][] west;
     private boolean[][] visited;
     private boolean done;
-    private byte fenceType;
+    private StructureConstantsEnum fenceType;
     private int offsetX;
     private int offsetY;
     private float fenceQl;
@@ -42,7 +43,7 @@ public class Maze
         Maze.logger = Logger.getLogger(Maze.class.getName());
     }
     
-    public Maze(final int startX, final int startY, final int size, final byte fenceType) {
+    public Maze(final int startX, final int startY, final int size, final StructureConstantsEnum fenceType) {
         this.done = false;
         this.offsetX = 0;
         this.offsetY = 0;
@@ -225,15 +226,17 @@ public class Maze
     }
     
     public boolean createHedge(final Tiles.TileBorderDirection tbDir, final int x, final int y, final boolean animateGrowth) throws NoSuchZoneException, IOException {
-        if (animateGrowth && this.fenceType != 113) {
+        if (animateGrowth && this.fenceType != StructureConstantsEnum.HEDGE_FLOWER3_HIGH) {
             throw new RuntimeException("Can only animate growth on flower 3 hedges");
         }
         final int startX = this.offsetX - this.mazeSize / 2;
         final int startY = this.offsetY - this.mazeSize / 2;
         final int layer = 0;
         final Zone zone = Zones.getZone(startX + x, startY + y, true);
-        final DbFence fence = new DbFence(animateGrowth ? 111 : this.fenceType, startX + x, startY + y, 0, 1.0f, tbDir, zone.getId(), layer);
-        if (this.fenceType != 126) {
+        final DbFence fence = new DbFence( animateGrowth ? StructureConstantsEnum.HEDGE_FLOWER3_LOW : this.fenceType, startX + x, startY + y, 0, 1.0f, tbDir, zone.getId(), layer);
+       
+        
+        if (this.fenceType != StructureConstantsEnum.FENCE_MAGIC_STONE) {
             fence.setHasNoDecay(true);
         }
         fence.setState(fence.getFinishState());
