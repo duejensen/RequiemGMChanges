@@ -5,6 +5,7 @@
 package org.reqiuem.mods.gmchanges.maze;
 
 import com.wurmonline.mesh.Tiles;
+import com.wurmonline.shared.constants.StructureConstantsEnum;
 import com.wurmonline.server.Server;
 import com.wurmonline.server.behaviours.MethodsStructure;
 import com.wurmonline.server.behaviours.Terraforming;
@@ -14,7 +15,6 @@ import com.wurmonline.server.structures.Fence;
 import com.wurmonline.server.zones.NoSuchZoneException;
 import com.wurmonline.server.zones.Zone;
 import com.wurmonline.server.zones.Zones;
-import com.wurmonline.shared.constants.StructureConstantsEnum;
 import org.reqiuem.mods.gmchanges.events.CreateMazeHedgeEvent;
 import org.reqiuem.mods.gmchanges.events.GrowMazeHedgeEvent;
 import org.reqiuem.mods.gmchanges.events.ShortEventDispatcher;
@@ -227,7 +227,7 @@ public class Maze
     
     public boolean createHedge(final Tiles.TileBorderDirection tbDir, final int x, final int y, final boolean animateGrowth) throws NoSuchZoneException, IOException {
         if (animateGrowth && this.fenceType != StructureConstantsEnum.HEDGE_FLOWER3_HIGH) {
-            throw new RuntimeException("Can only animate growth on flower 3 (Camellia) hedges");
+            throw new RuntimeException("Can only animate growth on flower 3 hedges");
         }
         final int startX = this.offsetX - this.mazeSize / 2;
         final int startY = this.offsetY - this.mazeSize / 2;

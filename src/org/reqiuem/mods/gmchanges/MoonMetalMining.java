@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  * @author Webba
  */
 public class MoonMetalMining {
-    private static final Logger _logger = Logger.getLogger(MoonMetalMining.class.getName());
+    private static final Logger _logger = Logger.getLogger(BetterGamemasters.class.getName());
     public static int newVeinCap = 10000;
     public static int newHomeVeinCap = 100;
 
@@ -39,7 +39,7 @@ public class MoonMetalMining {
                     double power = (double)args[5];
                     boolean surfaced = (boolean)args[6];
                     Action act = (Action)args[7];
-                    final byte rarity = (act != null) ? act.getRarity() : 0;
+                    final byte rarity = (byte)((act != null) ? act.getRarity() : 0);
                     int tempid = 0;
                     if(AllInOne.staticRandomAdamantiteChance > 0){
                         if (Server.rand.nextInt(AllInOne.staticRandomAdamantiteChance) == 0) {
@@ -58,11 +58,11 @@ public class MoonMetalMining {
                     }
                     if (tempid != 0){
                         if (tilex < 0 && tiley < 0) {
-                            final Item metal = ItemFactory.createItem(tempid, (float)power, null);
+                            final Item metal = ItemFactory.createItem(tempid, (float)power, (String)null);
                             metal.setLastOwnerId(performer.getWurmId());
                             return metal;
                         }
-                        final Item metal = ItemFactory.createItem(tempid, (float)power, (float)(createtilex * 4 + Server.rand.nextInt(4)), (float)(createtiley * 4 + Server.rand.nextInt(4)), Server.rand.nextFloat() * 360.0f, surfaced, rarity, -10L, null);
+                        final Item metal = ItemFactory.createItem(tempid, (float)power, (float)(createtilex * 4 + Server.rand.nextInt(4)), (float)(createtiley * 4 + Server.rand.nextInt(4)), Server.rand.nextFloat() * 360.0f, surfaced, rarity, -10L, (String)null);
                         metal.setLastOwnerId(performer.getWurmId());
                         performer.getCommunicator().sendNormalServerMessage("You find a chunk of a mysterious metal.");
                     }

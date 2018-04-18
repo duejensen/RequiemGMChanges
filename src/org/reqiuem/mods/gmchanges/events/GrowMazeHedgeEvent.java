@@ -5,6 +5,7 @@
 package org.reqiuem.mods.gmchanges.events;
 
 import com.wurmonline.server.structures.DbFence;
+import com.wurmonline.server.structures.Fence;
 import com.wurmonline.server.zones.VolaTile;
 import com.wurmonline.server.zones.Zones;
 import com.wurmonline.shared.constants.StructureConstantsEnum;
@@ -30,7 +31,7 @@ public class GrowMazeHedgeEvent extends EventOnce
             this.fence.setType(StructureConstantsEnum.getEnumByINDEX(this.stage));
             this.fence.save();
             final VolaTile tile = Zones.getTileOrNull(this.fence.getTileX(), this.fence.getTileY(), true);
-            tile.updateFence(this.fence);
+            tile.updateFence((Fence)this.fence);
         }
         catch (IOException e) {
             e.printStackTrace();

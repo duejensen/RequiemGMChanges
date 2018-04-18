@@ -1,15 +1,19 @@
+// 
+// Decompiled by Procyon v0.5.30
+// 
 
 package org.reqiuem.mods.gmchanges.actions;
 
 import com.wurmonline.server.behaviours.Action;
+
 import com.wurmonline.server.behaviours.ActionEntry;
 import com.wurmonline.server.creatures.Creature;
 import com.wurmonline.server.items.Item;
-import com.wurmonline.shared.constants.StructureConstantsEnum;
 import org.gotti.wurmunlimited.modsupport.actions.ActionPerformer;
 import org.gotti.wurmunlimited.modsupport.actions.BehaviourProvider;
 import org.gotti.wurmunlimited.modsupport.actions.ModAction;
 import org.gotti.wurmunlimited.modsupport.actions.ModActions;
+import com.wurmonline.shared.constants.StructureConstantsEnum;
 import org.reqiuem.mods.gmchanges.maze.Maze;
 
 import java.util.Arrays;
@@ -38,7 +42,7 @@ public class LabyrinthRemoveAction implements ModAction
     }
     
     public BehaviourProvider getBehaviourProvider() {
-        return new BehaviourProvider() {
+        return (BehaviourProvider)new BehaviourProvider() {
             public List<ActionEntry> getBehavioursFor(final Creature performer, final int tilex, final int tiley, final boolean onSurface, final int tile, final int dir) {
                 if (performer.getPower() >= LabyrinthAction.requiredGMlevel) {
                     return Arrays.asList(LabyrinthRemoveAction.this.actionEntry);
@@ -63,7 +67,7 @@ public class LabyrinthRemoveAction implements ModAction
     }
     
     public ActionPerformer getActionPerformer() {
-        return new ActionPerformer() {
+        return (ActionPerformer)new ActionPerformer() {
             public short getActionId() {
                 return LabyrinthRemoveAction.actionId;
             }
@@ -77,7 +81,7 @@ public class LabyrinthRemoveAction implements ModAction
                 if (performer.getPower() < LabyrinthAction.requiredGMlevel) {
                     return true;
                 }
-                performer.getCommunicator().sendNormalServerMessage("Removed GM Labyrinth!");
+                performer.getCommunicator().sendNormalServerMessage("Remove Labyrinth!");
                 final Maze m = new Maze(tilex, tiley, 60, StructureConstantsEnum.FENCE_MAGIC_STONE);
                 m.clear();
                 return true;

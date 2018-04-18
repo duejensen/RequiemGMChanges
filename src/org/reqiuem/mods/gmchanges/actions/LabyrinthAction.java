@@ -5,11 +5,11 @@
 package org.reqiuem.mods.gmchanges.actions;
 
 import com.wurmonline.server.behaviours.Action;
+import com.wurmonline.shared.constants.StructureConstantsEnum;
 import com.wurmonline.server.behaviours.ActionEntry;
 import com.wurmonline.server.behaviours.Actions;
 import com.wurmonline.server.creatures.Creature;
 import com.wurmonline.server.items.Item;
-import com.wurmonline.shared.constants.StructureConstantsEnum;
 import org.gotti.wurmunlimited.modsupport.actions.ActionPerformer;
 import org.gotti.wurmunlimited.modsupport.actions.BehaviourProvider;
 import org.gotti.wurmunlimited.modsupport.actions.ModAction;
@@ -35,10 +35,10 @@ public class LabyrinthAction implements ModAction
     
     static {
         LabyrinthAction.logger = Logger.getLogger(LabyrinthAction.class.getName());
-        LabyrinthAction.effectName = "GM Labyrinth";
+        LabyrinthAction.effectName = "labyrinth";
         LabyrinthAction.cooldown = 36000000L;
         LabyrinthAction.isGMonly = true;
-        LabyrinthAction.requiredGMlevel = 5;
+        LabyrinthAction.requiredGMlevel = AllInOne.commandPowerLevel;
     }
     
     public static short getActionId() {
@@ -60,7 +60,7 @@ public class LabyrinthAction implements ModAction
     }
     
     public BehaviourProvider getBehaviourProvider() {
-        return new BehaviourProvider() {
+        return (BehaviourProvider)new BehaviourProvider() {
             public List<ActionEntry> getBehavioursFor(final Creature performer, final Creature target) {
                 return this.getBehavioursFor(performer, target.getTileX(), target.getTileY(), target.isOnSurface(), target.getCurrentTileNum());
             }
@@ -93,7 +93,7 @@ public class LabyrinthAction implements ModAction
     }
     
     public ActionPerformer getActionPerformer() {
-        return new ActionPerformer() {
+        return (ActionPerformer)new ActionPerformer() {
             public short getActionId() {
                 return LabyrinthAction.actionId;
             }
@@ -136,7 +136,7 @@ public class LabyrinthAction implements ModAction
                     return true;
                 }
                 Cooldowns.setUsed(playerEffect);
-                performer.getCommunicator().sendNormalServerMessage("You Created a GM Labyrinth!");
+                performer.getCommunicator().sendNormalServerMessage("Labyrinth!");
                 final Maze m = new Maze(tilex, tiley, 21, StructureConstantsEnum.HEDGE_FLOWER3_HIGH);
                 m.create(true, false);
                 return true;

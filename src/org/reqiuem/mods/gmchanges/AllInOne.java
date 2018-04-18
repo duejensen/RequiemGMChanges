@@ -4,14 +4,23 @@ import com.wurmonline.server.Servers;
 import com.wurmonline.server.creatures.Communicator;
 import com.wurmonline.server.items.ItemList;
 import com.wurmonline.server.players.Player;
+
+import javassist.CannotCompileException;
+import javassist.ClassPool;
+import javassist.CtClass;
+import javassist.CtConstructor;
+import javassist.NotFoundException;
+import javassist.expr.ExprEditor;
+import javassist.expr.MethodCall;
+
 import org.gotti.wurmunlimited.modloader.classhooks.HookManager;
 import org.gotti.wurmunlimited.modloader.interfaces.*;
 import org.gotti.wurmunlimited.modsupport.actions.BehaviourProvider;
+import org.gotti.wurmunlimited.modsupport.actions.ModAction;
 import org.gotti.wurmunlimited.modsupport.actions.ModActions;
 import org.reqiuem.mods.gmchanges.actions.ActGmProtect;
 import org.reqiuem.mods.gmchanges.actions.ActSpawnTowerGuard;
 import org.reqiuem.mods.gmchanges.actions.LabyrinthAction;
-import org.reqiuem.mods.gmchanges.actions.LabyrinthRemoveAction;
 import org.reqiuem.mods.gmchanges.cmds.*;
 import org.reqiuem.mods.gmchanges.contrib.ArgumentTokenizer;
 import org.reqiuem.mods.gmchanges.utils.CmdTool;
@@ -22,14 +31,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class AllInOne implements WurmServerMod, Configurable, PreInitable, Initable, ServerStartedListener, BehaviourProvider, PlayerMessageListener {
-    private static final Logger _logger = Logger.getLogger(AllInOne.class.getName() + " v0.8");
-
+    private static final Logger _logger = Logger.getLogger(AllInOne.class.getName() + " v0.7");
     public static int commandPowerLevel = 5;
     public static boolean addGmProtect = true;
     public static boolean gmFullFavor = true;
     public static boolean gmFullStamina = true;
     public static boolean itemHolyBook = true;
-    public static boolean fixFatigueActions = true;
     public static boolean itemTownScroll = true;
     public static boolean stfuNpcs = true;
     public static boolean hidePlayerGodInscriptions = true;
@@ -58,13 +65,13 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
     public void preInit() {
         _logger.log(Level.INFO,"preInit()");
         ModActions.init();
-        MiscChanges.preInit();
-        MiscChanges.SpawnTowerGuards();
-        if (_noCarryWeightLimit) MiscChanges.NoCarryWeightLimit();
-        if (_notSlowedByWeight) MiscChanges.NotSlowedByWeight();
-        if (_noDamageOnGamemasterOwnedItems) MiscChanges.NoDamageOnGamemasterOwnedItems();
-        if (_noFloorBuildingRequirements) MiscChanges.NoFloorBuildingRequirements();
-        if (_noDropItemLimit) MiscChanges.NoDropItemLimit();
+        BetterGamemasters.SpawnTowerGuards();
+        //ModActions.init();
+        if (_noCarryWeightLimit) BetterGamemasters.NoCarryWeightLimit();
+        if (_notSlowedByWeight) BetterGamemasters.NotSlowedByWeight();
+        if (_noDamageOnGamemasterOwnedItems) BetterGamemasters.NoDamageOnGamemasterOwnedItems();
+        if (_noFloorBuildingRequirements) BetterGamemasters.NoFloorBuildingRequirements();
+        if (_noDropItemLimit) BetterGamemasters.NoDropItemLimit();
         if(useMoonMetalMiningMod) {
             if (changeVeinCap) {
                 MoonMetalMining.removeMoonMetalVeinCap();
@@ -76,8 +83,33 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
                 MoonMetalMining.changeHomeServerVeinCap();
             }
         }
-
+        // TODO  need to be configurable
+        fixFatigueActions();
+     
+        }
+    
+    static void fixFatigueActions()  {
+    	try {
+    		// - Remove fatiguing actions requiring you to be on the ground - //
+    		ClassPool classPool = HookManager.getInstance().getClassPool();
+    		CtClass ctAction = classPool.get("com.wurmonline.server.behaviours.Action");
+    		CtConstructor[] ctActionConstructors = ctAction.getConstructors();
+    		for(CtConstructor constructor : ctActionConstructors){
+    			constructor.instrument(new ExprEditor(){
+    				public void edit(MethodCall m) throws CannotCompileException {
+    					if (m.getMethodName().equals("isFatigue")) {
+    						m.replace("$_ = false;");
+    						return;
+    					}
+    				}
+    			});
+    		}
+    	} catch ( NotFoundException |  CannotCompileException e )   {
+    		 _logger.log(Level.SEVERE, "Can't apply patch for isFatigue.", e);
+        	
+        }       
     }
+    
     
     @Override
     public void init() {
@@ -163,7 +195,6 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
             addGmProtect = Boolean.valueOf( props.getProperty("addGmProtect",Boolean.toString(addGmProtect)) );
             gmFullFavor = Boolean.valueOf( props.getProperty("gmFullFavor",Boolean.toString(gmFullFavor)) );
             gmFullStamina = Boolean.valueOf( props.getProperty("gmFullStamina",Boolean.toString(gmFullStamina)) );
-            fixFatigueActions = Boolean.valueOf( props.getProperty("fixFatigueActions",Boolean.toString(fixFatigueActions)) );
             itemHolyBook = Boolean.valueOf( props.getProperty("itemHolyBook", Boolean.toString(itemHolyBook)) );
             itemTownScroll = Boolean.valueOf(props.getProperty("itemTownScroll", Boolean.toString(itemTownScroll)) );
             stfuNpcs = Boolean.valueOf( props.getProperty("stfuNpcs",Boolean.toString(stfuNpcs)) );
@@ -234,7 +265,6 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
 
             if (addGmProtect) ModActions.registerAction(new ActGmProtect());
             ModActions.registerAction(new LabyrinthAction());
-            ModActions.registerAction(new LabyrinthRemoveAction());
 
             ModActions.registerAction(new ActSpawnTowerGuard());
 
@@ -286,7 +316,7 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
     }
 
     public static boolean isTestEnv() {
-        return Servers.localServer.getName().equals("Test");
+        return Servers.localServer.getName().equals("Jubaroo");
     }
 
 }

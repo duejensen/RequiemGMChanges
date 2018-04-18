@@ -76,7 +76,7 @@ public abstract class EventOnce
         MINUTES("MINUTES", 2), 
         HOURS("HOURS", 3);
         
-        Unit(final String s, final int n) {
+        private Unit(final String s, final int n) {
         }
     }
 }

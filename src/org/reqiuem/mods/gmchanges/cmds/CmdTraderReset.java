@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CmdTraderReset extends WurmCmd {
-	private static final Logger _logger = Logger.getLogger(AllInOne.class.getName());
+	private static final Logger _logger = Logger.getLogger(AllInOne.class.getName() + " v1.8");
 	
     public CmdTraderReset () {
         super("#resettraders", AllInOne.commandPowerLevel);

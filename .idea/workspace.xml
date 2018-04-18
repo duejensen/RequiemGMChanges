@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2bb5ef1-d96d-4e9b-b6d6-410e9b167fc7" name="Default" comment="Added auto generate labyrinths to GM commands">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/AllInOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/AllInOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/BetterGamemasters.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MiscChanges.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MiscChanges.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MoonMetalMining.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MoonMetalMining.java" afterDir="false" />
-    </list>
+    <list default="true" id="f2bb5ef1-d96d-4e9b-b6d6-410e9b167fc7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,66 +15,15 @@
     <option name="HIDE_WARNINGS" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AllInOne.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/AllInOne.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MoonMetalMining.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MoonMetalMining.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MiscChanges.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MiscChanges.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="460" column="15" lean-forward="true" selection-start-line="460" selection-start-column="15" selection-end-line="460" selection-end-column="15" />
-              <folding>
-                <element signature="e#23683#24038#0" expanded="true" />
-                <element signature="e#24037#24038#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>logger</find>
       <find />
-      <find>113</find>
-      <find>gmFullStamina</find>
-      <find>sendServerTabMessage</find>
-      <find>checkEnchantedBreed</find>
-      <find>v0.7</find>
-      <find>trigger</find>
-      <find>checkModify</find>
-      <find>com.wurmonline.server.creatures.Creature</find>
     </findStrings>
     <replaceStrings>
       <replace>_logger</replace>
-      <replace />
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -89,25 +32,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/actions/ActSpawnTowerGuard.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/maze/TileMaze.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/utils/Cooldowns.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/utils/Mod.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/utils/StdRandom.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/events/EventOnce.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/events/ShortEventDispatcher.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/events/GrowMazeHedgeEvent.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/events/CreateMazeHedgeEvent.java" />
+        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MiscChanges.java" />
+        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MoonMetalMining.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/cmds/CmdTraderReset.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/maze/Maze.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/actions/LabyrinthAction.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/actions/LabyrinthRemoveAction.java" />
+        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/actions/ActSpawnTowerGuard.java" />
         <option value="$PROJECT_DIR$/RequiemGMChanges.properties" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MoonMetalMining.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/BetterGamemasters.java" />
         <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/AllInOne.java" />
-        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MiscChanges.java" />
+        <option value="$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/BetterGamemasters.java" />
       </list>
     </option>
   </component>
@@ -125,8 +57,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,28 +77,30 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="gmchanges" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="RequiemGMChanges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RequiemGMChanges" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gmchanges" type="462c0819:PsiDirectoryNode" />
+              <item name="actions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RequiemGMChanges" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RequiemGMChanges" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="gmchanges" type="462c0819:PsiDirectoryNode" />
+              <item name="cmds" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SoulstealingMod" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.reqiuem.mods.gmchanges.events" />
-      <recent name="org.reqiuem.mods.gmchanges" />
-      <recent name="org.reqiuem.mods.gmchanges.utils" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Jarrod Laptop\IdeaProjects\RequiemGMChanges\src\org\reqiuem\mods\gmchanges" />
-      <recent name="C:\Users\Jarrod Laptop\IdeaProjects\RequiemGMChanges\src\org\reqiuem\mods\gmchanges\actions" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -234,32 +168,10 @@
       <option name="presentableId" value="Default" />
       <updated>1523820525859</updated>
     </task>
-    <task id="LOCAL-00001" summary="Added auto generate labyrinths to GM commands">
-      <created>1523923257756</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1523923257756</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Oluf maze and fatigue changes">
-      <created>1524001024279</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1524001024279</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added new MiscChanges class and moved the fatigue change over to it.&#10;Added more misc changes.&#10;Attempted to fix frozen class by merging the BetterGamemasters class with the MiscChanges class.">
-      <created>1524022902800</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1524022902800</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -269,12 +181,13 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32965517" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19661458" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
       <window_info id="Learn" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -282,105 +195,39 @@
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info id="Designer" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info id="Learn" order="2" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32965517" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added auto generate labyrinths to GM commands" />
-    <MESSAGE value="Oluf maze and fatigue changes" />
-    <MESSAGE value="Added new MiscChanges class and moved the fatigue change over to it.&#10;Added more misc changes.&#10;Attempted to fix frozen class by merging the BetterGamemasters class with the MiscChanges class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new MiscChanges class and moved the fatigue change over to it.&#10;Added more misc changes.&#10;Attempted to fix frozen class by merging the BetterGamemasters class with the MiscChanges class." />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MiscChanges.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4675">
-          <caret line="275" column="33" lean-forward="true" selection-start-line="275" selection-start-column="33" selection-end-line="275" selection-end-column="33" />
-          <folding>
-            <element signature="e#23683#24038#0" expanded="true" />
-            <element signature="e#24037#24038#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/cmds/CmdTraderReset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#723#724#0" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/BetterGamemasters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3315">
-          <caret line="195" column="40" selection-start-line="195" selection-start-column="40" selection-end-line="195" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/AllInOne.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="68" column="28" lean-forward="true" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/maze/HedgeMaze.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/cmds/CmdTraderReset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding>
-            <element signature="e#723#724#0" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/BetterGamemasters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3315">
-          <caret line="195" column="40" selection-start-line="195" selection-start-column="40" selection-end-line="195" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/AllInOne.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="30" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MiscChanges.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/maze/Maze.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/actions/LabyrinthAction.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/AllInOne.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3621">
-          <caret line="231" lean-forward="true" selection-start-line="231" selection-end-line="231" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/actions/ActVillageToken.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -601,36 +448,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/AllInOne.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+        <state relative-caret-position="293">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/BetterGamemasters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="20" selection-start-line="16" selection-end-line="20" />
-          <folding>
-            <element signature="e#8430#8805#0" expanded="true" />
-            <element signature="e#8804#8805#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/BetterGamemasters.java" />
     <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MiscChanges.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="460" column="15" lean-forward="true" selection-start-line="460" selection-start-column="15" selection-end-line="460" selection-end-column="15" />
+        <state relative-caret-position="-4">
+          <caret line="300" column="14" selection-start-line="300" selection-start-column="14" selection-end-line="300" selection-end-column="14" />
           <folding>
+            <element signature="e#7605#8527#0" expanded="true" />
+            <element signature="e#8526#8527#0" expanded="true" />
+            <element signature="e#8764#9277#0" expanded="true" />
+            <element signature="e#9276#9277#0" expanded="true" />
+            <element signature="e#9348#9654#0" expanded="true" />
+            <element signature="e#9653#9654#0" expanded="true" />
+            <element signature="e#9725#10034#0" expanded="true" />
+            <element signature="e#10033#10034#0" expanded="true" />
+            <element signature="e#10283#10579#0" expanded="true" />
+            <element signature="e#10578#10579#0" expanded="true" />
+            <element signature="e#10938#11263#0" expanded="true" />
+            <element signature="e#11262#11263#0" expanded="true" />
+            <element signature="e#11551#11955#0" expanded="true" />
+            <element signature="e#11954#11955#0" expanded="true" />
+            <element signature="e#12446#13027#0" expanded="true" />
+            <element signature="e#13026#13027#0" expanded="true" />
+            <element signature="e#13408#13887#0" expanded="true" />
+            <element signature="e#13886#13887#0" expanded="true" />
+            <element signature="e#14561#15175#0" expanded="true" />
+            <element signature="e#15174#15175#0" expanded="true" />
+            <element signature="e#15347#15731#0" expanded="true" />
+            <element signature="e#15730#15731#0" expanded="true" />
             <element signature="e#23683#24038#0" expanded="true" />
             <element signature="e#24037#24038#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md" />
+    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MoonMetalMining.java" />
+    <entry file="file://$PROJECT_DIR$/RequiemGMChanges.properties" />
+    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/MiscChanges.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/cmds/CmdWoot.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/actions/ActGmProtect.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/actions/ActVillageToken.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/actions/ActSpawnTowerGuard.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/cmds/CmdGoTo.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/cmds/CmdTraderReset.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/AllInOne.java" />
+    <entry file="file://$PROJECT_DIR$/src/org/reqiuem/mods/gmchanges/BetterGamemasters.java" />
   </component>
   <component name="masterDetails">
     <states>
