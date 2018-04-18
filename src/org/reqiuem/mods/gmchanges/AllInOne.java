@@ -59,12 +59,12 @@ public class AllInOne implements WurmServerMod, Configurable, PreInitable, Inita
         _logger.log(Level.INFO,"preInit()");
         ModActions.init();
         MiscChanges.preInit();
-        BetterGamemasters.SpawnTowerGuards();
-        //if (_noCarryWeightLimit) BetterGamemasters.NoCarryWeightLimit();
-        //if (_notSlowedByWeight) BetterGamemasters.NotSlowedByWeight();
-        //if (_noDamageOnGamemasterOwnedItems) BetterGamemasters.NoDamageOnGamemasterOwnedItems();
-        //if (_noFloorBuildingRequirements) BetterGamemasters.NoFloorBuildingRequirements();
-        //if (_noDropItemLimit) BetterGamemasters.NoDropItemLimit();
+        MiscChanges.SpawnTowerGuards();
+        if (_noCarryWeightLimit) MiscChanges.NoCarryWeightLimit();
+        if (_notSlowedByWeight) MiscChanges.NotSlowedByWeight();
+        if (_noDamageOnGamemasterOwnedItems) MiscChanges.NoDamageOnGamemasterOwnedItems();
+        if (_noFloorBuildingRequirements) MiscChanges.NoFloorBuildingRequirements();
+        if (_noDropItemLimit) MiscChanges.NoDropItemLimit();
         if(useMoonMetalMiningMod) {
             if (changeVeinCap) {
                 MoonMetalMining.removeMoonMetalVeinCap();

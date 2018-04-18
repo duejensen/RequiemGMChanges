@@ -22,7 +22,7 @@ import java.util.logging.Logger;
  * @author Webba
  */
 public class MoonMetalMining {
-    private static final Logger _logger = Logger.getLogger(BetterGamemasters.class.getName());
+    private static final Logger _logger = Logger.getLogger(MoonMetalMining.class.getName());
     public static int newVeinCap = 10000;
     public static int newHomeVeinCap = 100;
 
